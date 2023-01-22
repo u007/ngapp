@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'ngapp';
 
   constructor(private trpc: TrpcService) {
-    this.trpc.trpc.getUser.query('someone').then((res) => {
+    this.trpc.client.hi.query().then((res) => {
       console.log('getuser!', res);
     });
   }

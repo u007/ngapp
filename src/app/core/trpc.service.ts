@@ -7,19 +7,19 @@ import type { AppRouter } from '../../../../expresst/src/router/server';
   providedIn: 'root'
 })
 export class TrpcService {
-  trpc;
+  client;
 
   constructor() {
-    this.trpc = createTRPCProxyClient<AppRouter>({
+    this.client = createTRPCProxyClient<AppRouter>({
       links: [
         httpBatchLink({
           url: 'http://localhost:4000/trpc',
-          fetch(url, options) {
-            return fetch(url, {
-              ...options,
-              // credentials: 'include',
-            });
-          },
+          // fetch(url, options) {
+          //   return fetch(url, {
+          //     ...options,
+          //     // credentials: 'include',
+          //   });
+          // },
         }),
       ],
     });
