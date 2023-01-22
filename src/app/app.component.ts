@@ -10,8 +10,12 @@ export class AppComponent {
   title = 'ngapp';
 
   constructor(private trpc: TrpcService) {
+    this.sayHi();
+  }
+
+  sayHi() {
     this.trpc.client.hi.query().then((res) => {
-      console.log('getuser!', res);
+      console.log('hi!', res);
     });
   }
 }
