@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createTRPCProxyClient, httpBatchLink } from '@trpc/client';
 // Importing the router type from the server file
-import type { AppRouter } from '../../../../expresst/src/router/server';
+import type { AppRouter } from '../../../server/src/router/server';
 
 @Injectable({
   providedIn: 'root'
